@@ -1,0 +1,56 @@
+{
+  "name": "open-in-iterm2",
+  "displayName": "Open in iTerm2",
+  "description": "Open folders in iTerm2 from VS Code/Cursor explorer",
+  "version": "1.0.0",
+  "publisher": "stoph",
+  "author": {
+    "name": "Christoph Khouri"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:open-in-iterm2.openFolder"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "open-in-iterm2.openFolder",
+        "title": "Open in iTerm2"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "open-in-iterm2.openFolder",
+          "when": "explorerResourceIsFolder",
+          "group": "navigation@30"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stoph/vscode-iterm2"
+  },
+  "keywords": [
+    "iterm2",
+    "terminal",
+    "macos",
+    "folder"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "package": "vsce package",
+    "install-vsce": "npm install -g @vscode/vsce"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}
+
