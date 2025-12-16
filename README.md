@@ -1,16 +1,16 @@
 # Open in iTerm2
 
-Right-click any folder in VS Code's explorer and open it directly in iTerm2.
+Right-click any file or folder in VS Code's explorer and open it directly in iTerm2.
 
 ## Features
 
-- Adds "Open in iTerm2" to the context menu when right-clicking folders
-- Opens a new iTerm2 tab with the folder path
+- Adds "Open in iTerm2" to the context menu when right-clicking files or folders
+- Opens a new iTerm2 tab in the folder (or parent folder for files)
 - macOS only (requires iTerm2)
 
 ## Usage
 
-1. Right-click on any folder in the VS Code explorer
+1. Right-click on any file or folder in the VS Code/Cursor explorer
 2. Select "Open in iTerm2"
 3. A new iTerm2 tab opens with the terminal in that folder
 

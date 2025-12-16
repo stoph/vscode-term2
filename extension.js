@@ -1,15 +1,21 @@
 const vscode = require('vscode');
 const { exec } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 
 function activate(context) {
     let disposable = vscode.commands.registerCommand('open-in-iterm2.openFolder', (uri) => {
         if (!uri || !uri.fsPath) {
-            vscode.window.showErrorMessage('No folder selected');
+            vscode.window.showErrorMessage('No file or folder selected');
             return;
         }
 
-        const folderPath = uri.fsPath;
+        let folderPath = uri.fsPath;
+        
+        // If it's a file, get the parent directory
+        if (fs.statSync(folderPath).isFile()) {
+            folderPath = path.dirname(folderPath);
+        }
 
         const appleScript = `
             tell application "iTerm"

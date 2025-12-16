@@ -28,7 +28,6 @@
       "explorer/context": [
         {
           "command": "open-in-iterm2.openFolder",
-          "when": "explorerResourceIsFolder",
           "group": "navigation@30"
         }
       ]
